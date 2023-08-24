@@ -150,10 +150,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 65
-  gravity: -9.81
-  jumpForce: 10
+  gravity: -30
+  jumpForce: 15
   jumped: 0
-  maxNumberOfJumps: 2
   anim: {fileID: 0}
 --- !u!143 &413097562
 CharacterController:

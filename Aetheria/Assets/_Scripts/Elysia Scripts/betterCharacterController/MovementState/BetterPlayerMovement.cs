@@ -29,8 +29,8 @@ public class BetterPlayerMovement : MonoBehaviour
     #endregion
 
     #region Gravity
-    [SerializeField] float gravity = -9.81f;
-    [SerializeField] float jumpForce = 10;
+    [SerializeField] float gravity = -30f;
+    [SerializeField] float jumpForce = 15;
     [HideInInspector] public bool jumped;
     Vector3 velocity;
     #endregion
