@@ -11,7 +11,7 @@ public class SpawnProyectileShotgun : MonoBehaviour
     public List<GameObject> vfx = new List<GameObject>();
     public int spreadAmountBullets = 4;
     private GameObject effectToSpawn;
-    public RotateToMouse rotateToMouse;
+  //  public RotateToMouse rotateToMouse;
     private float timeTofire = 0;
     [SerializeField]
     public int proyectileType = 0;
@@ -70,11 +70,13 @@ public class SpawnProyectileShotgun : MonoBehaviour
         vfx = _proyectilPool != null ? _proyectilPool.Get() : Instantiate(effectToSpawn, firepoint.transform.position,Quaternion.identity);
         Quaternion rotation = firepoint.transform.rotation * rotationModifier;
         vfx.GetComponent<ProyectileMove>().direccion = (rotation * new Vector3(1,0,0)).normalized;
+        /*
         if (rotateToMouse != null)
         {
         // vfx.transform.localRotation = rotateToMouse.getRotation();
          //   vfx.transform.localRotation = firepoint.transform.rotation;
         }
+        */
         vfx.GetComponent<ProyectileMove>().Init(destroyBullet);
     }
 
