@@ -62,6 +62,9 @@ public class SpawnProjectiles : MonoBehaviour
             bullet.gameObject.transform.position = firepoint.transform.position;
             bullet.gameObject.transform.rotation = effectToSpawn.transform.rotation;
             bullet.gameObject.transform.localRotation = effectToSpawn.transform.localRotation;
+
+            bullet.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            bullet.gameObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
             bullet.speed = effectToSpawn.GetComponent<ProyectileMove>().speed;
             _proyectilPool.Release(bullet.gameObject);
         }

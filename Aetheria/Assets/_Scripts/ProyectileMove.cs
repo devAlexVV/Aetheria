@@ -11,7 +11,14 @@ public class ProyectileMove : MonoBehaviour
     public float fireRate;
     public GameObject muzzlePrefab;
     public GameObject hitPrefab;
-
+    public Vector3 direccion;
+    public float bulletLifeTime = 5;
+    float timeSinceShot = 0f;
+    bool bulletShoot = false;
+    private void Awake()
+    {
+        direccion = transform.forward;
+    }
     public void Init(Action<ProyectileMove> destroyAction)
     {
         _destroyAction = destroyAction;
@@ -34,12 +41,23 @@ public class ProyectileMove : MonoBehaviour
 
     void Update()
     {
+
+        bulletShoot = true;
+        timeSinceShot += Time.deltaTime;
         if (speed != 0) {
-            transform.position += transform.forward * (speed*Time.deltaTime);
+            transform.position += direccion * (speed*Time.deltaTime);
         }
         else
         {
             Debug.Log("No Speed");
+        }
+
+        if (!gameObject.activeSelf) {
+            timeSinceShot = 0;
+        }
+        
+        if (timeSinceShot >= bulletLifeTime) { 
+            Destroy(gameObject);
         }
     }
 
@@ -67,7 +85,12 @@ public class ProyectileMove : MonoBehaviour
         }
 
         if (!other.gameObject.CompareTag("nonColision")) {
-           // Destroy(gameObject);
+            // Destroy(gameObject);
+            /*
+            gameObject.transform.position = originalTransform.position;
+            gameObject.transform.rotation = originalTransform.rotation;
+            gameObject.transform.localScale = originalTransform.localScale;
+            */
             _destroyAction(this);
         }
        

@@ -92,10 +92,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116858571090050214}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2583, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.88, y: 5.76, z: 2.88}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6116858570129194749}
   - {fileID: 6116858570091691768}
@@ -175,8 +175,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5.85
+  m_Acceleration: 8.38
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -185,7 +185,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 4
 --- !u!54 &6116858571090050209
 Rigidbody:
@@ -216,9 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  sightRange: 20
-  attackRange: 6
-  damage: 25
+  sightRange: 39.29
+  attackRange: 10.9
   attackTimeout: 0.2
   bulletPrefab: {fileID: 368348102677209301, guid: 34a5bc8c92e922e4a9ae8f2b31ccff98, type: 3}
   firePoint: {fileID: 6116858570091691768}

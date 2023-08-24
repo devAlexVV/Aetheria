@@ -4,23 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - nonColision
   - Enemy
+  - nonColision
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Ground
-<<<<<<< Updated upstream
+  - bullet
   - 
   - 
-=======
-  - Enemy
-  - Player
->>>>>>> Stashed changes
   - 
   - 
   - 
